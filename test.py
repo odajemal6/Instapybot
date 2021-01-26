@@ -31,7 +31,7 @@ with smart_run(session):
     session.set_relationship_bounds(enabled=True,
                  potency_ratio=1.34,
                   delimit_by_numbers=True,
-                   max_followers=900,
+                   max_followers=3000,
                     max_following=4490,
                      min_followers=100,
                       min_following=300,
@@ -39,5 +39,5 @@ with smart_run(session):
                 max_posts=1000)
     # Liking
     # Like posts based on hashtags
-    session.like_by_tags(tags, amount=10)
-    session.like_by_locations(location, amount=10, randomize=True)
+    session.like_by_tags(tags, amount=1000)
+    session.like_by_locations(location, amount=1000, randomize=True)
