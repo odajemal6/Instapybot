@@ -27,6 +27,7 @@ location = [
 with smart_run(session):
     # General setting
     session.set_do_like(enabled=True, percentage=70)
+    session.set_do_follow(enabled=True, percentage=25)
     session.set_relationship_bounds(enabled=True,
                  potency_ratio=1.34,
                   delimit_by_numbers=True,
@@ -38,5 +39,5 @@ with smart_run(session):
                 max_posts=1000)
     # Liking
     # Like posts based on hashtags
-    session.like_by_tags(tags, amount=1)
-    session.like_by_locations(location, amount=1, randomize=True)
+    session.like_by_tags(tags, amount=10)
+    session.like_by_locations(location, amount=10, randomize=True)
