@@ -16,7 +16,9 @@ comments = [
 tags = ['habeshabeauty', 'habesha', 'ethiopia', 'ethiopian', 'eth', 
         'habeshastyle', 'habeshaparty', 'reviewethio', 'habeshafashion',
         'ethiopianstyle', 'habeshakonjo', 'habeshan', 'habeshanbeauty',
-        'habeshaladies'
+        'habeshaladies', 'oromo', 'oromobeauty', 'oromoculture',
+        'oromogirl', 'oromoo', 'oromolove', 'oromopride', 'oromowomen',
+        'oromofirst'
         ]
 location = [
         '1803190983301422/haile-hotels-and-resorts/',
@@ -28,6 +30,7 @@ with smart_run(session):
     # General setting
     session.set_do_like(enabled=True, percentage=70)
     session.set_do_follow(enabled=True, percentage=25)
+    session.set_do_comment(enabled=True, percentage=25)
     session.set_relationship_bounds(enabled=True,
                  potency_ratio=1.34,
                   delimit_by_numbers=True,
@@ -39,5 +42,8 @@ with smart_run(session):
                 max_posts=1000)
     # Liking
     # Like posts based on hashtags
-    session.like_by_tags(tags, amount=1000)
-    session.like_by_locations(location, amount=1000, randomize=True)
+    session.like_by_tags(tags, amount=50)
+    session.like_by_locations(location, amount=50, randomize=True)
+    # Comment
+
+    session.set_comments(comments)
