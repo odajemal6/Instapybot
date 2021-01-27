@@ -3,8 +3,8 @@ from instapy import smart_run
 from secrets import insta_username, insta_password
 from random import randint, choice
 session = InstaPy(
-    username = insta_username,
-    password = insta_password,
+    username=insta_username,
+    password=insta_password,
     headless_browser=False
 )
 comments = [
@@ -13,7 +13,7 @@ comments = [
     'Like your post',
     'awesome'
 ]
-tags = ['habeshabeauty', 'habesha', 'ethiopia', 'ethiopian', 'eth', 
+tags = ['habeshabeauty', 'habesha', 'ethiopia', 'ethiopian', 'eth',
         'habeshastyle', 'habeshaparty', 'reviewethio', 'habeshafashion',
         'ethiopianstyle', 'habeshakonjo', 'habeshan', 'habeshanbeauty',
         'habeshaladies', 'oromo', 'oromobeauty', 'oromoculture',
@@ -21,29 +21,34 @@ tags = ['habeshabeauty', 'habesha', 'ethiopia', 'ethiopian', 'eth',
         'oromofirst'
         ]
 location = [
-        '1803190983301422/haile-hotels-and-resorts/',
-        '292006909/nazareth-shewa-ethiopia/',
-        '598461275/adama-shewa-ethiopia/',
-        '220596416/addis-ababa-ethiopia/'
-        ]
+    '1803190983301422/haile-hotels-and-resorts/',
+    '292006909/nazareth-shewa-ethiopia/',
+    '598461275/adama-shewa-ethiopia/',
+    '220596416/addis-ababa-ethiopia/'
+]
 with smart_run(session):
     # General setting
     session.set_do_like(enabled=True, percentage=70)
     session.set_do_follow(enabled=True, percentage=25)
     session.set_do_comment(enabled=True, percentage=25)
     session.set_relationship_bounds(enabled=True,
-                 potency_ratio=1.34,
-                  delimit_by_numbers=True,
-                   max_followers=3000,
-                    max_following=4490,
-                     min_followers=100,
-                      min_following=300,
-                       min_posts=0,
-                max_posts=1000)
+                                    potency_ratio=1.34,
+                                    delimit_by_numbers=True,
+                                    max_followers=3000,
+                                    max_following=1500,
+                                    min_followers=100,
+                                    min_following=400,
+                                    min_posts=0,
+                                    max_posts=1000)
     # Liking
     # Like posts based on hashtags
     session.like_by_tags(tags, amount=50)
     session.like_by_locations(location, amount=50, randomize=True)
+
     # Comment
 
     session.set_comments(comments)
+
+    # Follow
+
+    session.follow_by_tags(tags, amount=2)
