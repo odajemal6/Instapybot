@@ -28,15 +28,16 @@ location = [
 ]
 with smart_run(session):
     # General setting
+    session.set_blacklist(enabled=True, campaign='yada2k21')
     session.set_do_like(enabled=True, percentage=70)
     session.set_do_follow(enabled=True, percentage=25)
     session.set_do_comment(enabled=True, percentage=25)
     session.set_relationship_bounds(enabled=True,
-                                    potency_ratio=1.34,
+                                    potency_ratio=None,
                                     delimit_by_numbers=True,
-                                    max_followers=3000,
-                                    max_following=1500,
-                                    min_followers=100,
+                                    max_followers=1000,
+                                    max_following=1000,
+                                    min_followers=300,
                                     min_following=400,
                                     min_posts=0,
                                     max_posts=1000)
@@ -51,4 +52,6 @@ with smart_run(session):
 
     # Follow
 
-    session.follow_by_tags(tags, amount=2)
+    # session.follow_by_locations(location, amount=100)
+    session.follow_user_followers(['robsan_hmt', 'nahom_legesse', 'official_naolx'],
+                                  amount=100, randomize=True, interact=True, sleep_delay=21)
