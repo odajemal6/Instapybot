@@ -37,7 +37,7 @@ with smart_run(session):
                                     delimit_by_numbers=True,
                                     max_followers=1000,
                                     max_following=1000,
-                                    min_followers=300,
+                                    min_followers=400,
                                     min_following=400,
                                     min_posts=0,
                                     max_posts=1000)
@@ -53,5 +53,9 @@ with smart_run(session):
     # Follow
 
     # session.follow_by_locations(location, amount=100)
-    session.follow_user_followers(['robsan_hmt', 'nahom_legesse', 'official_naolx'],
+    session.follow_user_followers(['robsan_hmt', 'nahom_legesse', 'official_naolx', 'kei__g_', 'miku__lovee', 'beckham7bkm', 'eyor_cawe', 'official_blackye', 'guyyeman', 'kena_zgreat', 'giruma__'],
                                   amount=100, randomize=True, interact=True, sleep_delay=21)
+    # Unfollow
+    session.unfollow_users(
+        amount=50, nonFollowers=True, style="RANDOM", unfollow_after=42*60*60, sleep_delay=23
+    )
