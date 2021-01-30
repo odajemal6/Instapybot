@@ -26,8 +26,13 @@ location = [
     '598461275/adama-shewa-ethiopia/',
     '220596416/addis-ababa-ethiopia/'
 ]
-users = ['robsan_hmt', 'nahom_legesse', 'official_naolx', 'kei__g_', 'miku__lovee', 'ethio_pure_habesha', 'official_leul',
-         'beckham7bkm', 'eyor_cawe', 'official_blackye', 'guyyeman', 'kena_zgreat', 'giruma__', 'kaleab__endashw']
+users = [
+    'eyu.g_', 'farees4real', 'f_a_r_i_s_a_b', 'Farracer_999',
+    'robsan_hmt', 'nahom_legesse', 'official_naolx', 'kei__g_',
+    'ethio_pure_habesha', 'official_leul', 'makbooll_a',
+    'beckham7bkm', 'eyor_cawe', 'official_blackye', 
+    'guyyeman', 'kena_zgreat', 'giruma__', 'kaleab__endashw'
+]
 with smart_run(session):
     # General setting
     session.set_blacklist(enabled=True, campaign='yada2k21')
