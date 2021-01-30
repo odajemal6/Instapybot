@@ -45,7 +45,7 @@ with smart_run(session):
                                     max_followers=1000,
                                     max_following=1000,
                                     min_followers=400,
-                                    min_following=400,
+                                    min_following=500,
                                     min_posts=0,
                                     max_posts=1000)
     # Liking
@@ -61,7 +61,7 @@ with smart_run(session):
 
     # session.follow_by_locations(location, amount=100)
     session.follow_user_followers(
-        users, amount=100, randomize=True, interact=True, sleep_delay=21)
+        users, amount=200, randomize=True, interact=True, sleep_delay=27)
     # Unfollow
     # session.unfollow_users(
     #    amount = 50, nonFollowers = True, style = "RANDOM", unfollow_after = 42*60*60, sleep_delay = 23
