@@ -26,6 +26,8 @@ location = [
     '598461275/adama-shewa-ethiopia/',
     '220596416/addis-ababa-ethiopia/'
 ]
+users = ['robsan_hmt', 'nahom_legesse', 'official_naolx', 'kei__g_', 'miku__lovee', 'ethio_pure_habesha', 'official_leul',
+         'beckham7bkm', 'eyor_cawe', 'official_blackye', 'guyyeman', 'kena_zgreat', 'giruma__', 'kaleab__endashw']
 with smart_run(session):
     # General setting
     session.set_blacklist(enabled=True, campaign='yada2k21')
@@ -43,19 +45,19 @@ with smart_run(session):
                                     max_posts=1000)
     # Liking
     # Like posts based on hashtags
-    session.like_by_tags(tags, amount=50)
-    session.like_by_locations(location, amount=50, randomize=True)
+    #session.like_by_tags(tags, amount=50)
+    #session.like_by_locations(location, amount=50, randomize=True)
 
     # Comment
 
-    session.set_comments(comments)
+    # session.set_comments(comments)
 
     # Follow
 
     # session.follow_by_locations(location, amount=100)
-    session.follow_user_followers(['robsan_hmt', 'nahom_legesse', 'official_naolx', 'kei__g_', 'miku__lovee', 'beckham7bkm', 'eyor_cawe', 'official_blackye', 'guyyeman', 'kena_zgreat', 'giruma__'],
-                                  amount=100, randomize=True, interact=True, sleep_delay=21)
+    session.follow_user_followers(
+        users, amount=100, randomize=True, interact=True, sleep_delay=21)
     # Unfollow
-    session.unfollow_users(
-        amount=50, nonFollowers=True, style="RANDOM", unfollow_after=42*60*60, sleep_delay=23
-    )
+    # session.unfollow_users(
+    #    amount = 50, nonFollowers = True, style = "RANDOM", unfollow_after = 42*60*60, sleep_delay = 23
+    # )
