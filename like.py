@@ -11,7 +11,9 @@ session = InstaPy(
 def like():
     session.set_do_like(enabled=True, percentage=70)
     session.like_by_tags([
-        'likeforlike', 'likeforlikes'
+        'like4like', 'liking', 'likeall', 'likeforlike',
+        'likes4likes', 'love', 'instagood', 'tagblender',
+        'likesforlikes', 'ilikeback'
     ], amount=100)
 
 with smart_run(session):
