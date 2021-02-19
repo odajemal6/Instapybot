@@ -19,7 +19,15 @@ tags = ['habeshabeauty', 'habesha', 'ethiopia', 'ethiopian', 'eth',
         'habeshaladies', 'oromo', 'oromobeauty', 'oromoculture',
         'oromogirl', 'oromoo', 'oromolove', 'oromopride', 'oromowomen',
         'oromofirst'
-        ]
+liketag = ['like4like', 'liking', 'likeall', 'likeforlike',
+        'likes4likes', 'love', 'instagood', 'tagblender',
+        'likesforlikes', 'ilikeback', 'liketeam', 'liker',
+        'ilike', 'likealways', 'likebackteam', 'ilikeyou',
+        'ilikeit', 'likeme', 'tflers', 'likes', 'likesback',
+        'photooftheday', 'likesforlike', 'iliketurtles',
+        'likes4followers', 'likemeback', 'ilu'
+        'likesreturned', 'l4l']
+
 location = [
     '1803190983301422/haile-hotels-and-resorts/',
     '292006909/nazareth-shewa-ethiopia/',
