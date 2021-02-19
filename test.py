@@ -19,6 +19,7 @@ tags = ['habeshabeauty', 'habesha', 'ethiopia', 'ethiopian', 'eth',
         'habeshaladies', 'oromo', 'oromobeauty', 'oromoculture',
         'oromogirl', 'oromoo', 'oromolove', 'oromopride', 'oromowomen',
         'oromofirst'
+       ]
 liketag = ['like4like', 'liking', 'likeall', 'likeforlike',
         'likes4likes', 'love', 'instagood', 'tagblender',
         'likesforlikes', 'ilikeback', 'liketeam', 'liker',
