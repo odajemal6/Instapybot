@@ -2,36 +2,76 @@ from instapy import InstaPy
 from instapy import smart_run
 from secrets import insta_username, insta_password
 from random import randint, choice
-from time import sleep
 session = InstaPy(
-    username = insta_username,
-    password = insta_password,
+    username=insta_username,
+    password=insta_password,
     headless_browser=False
 )
+comments = [
+    'Nice shot!',
+    'cooooool',
+    'Like your post',
+    'awesome'
+]
+tags = ['habeshabeauty', 'habesha', 'ethiopia', 'ethiopian', 'eth',
+        'habeshastyle', 'habeshaparty', 'reviewethio', 'habeshafashion',
+        'ethiopianstyle', 'habeshakonjo', 'habeshan', 'habeshanbeauty',
+        'habeshaladies', 'oromo', 'oromobeauty', 'oromoculture',
+        'oromogirl', 'oromoo', 'oromolove', 'oromopride', 'oromowomen',
+        'oromofirst'
+       ]
+liketag = ['like4like', 'liking', 'likeall', 'likeforlike',
+        'likes4likes', 'love', 'instagood', 'tagblender',
+        'likesforlikes', 'ilikeback', 'liketeam', 'liker',
+        'ilike', 'likealways', 'likebackteam', 'ilikeyou',
+        'ilikeit', 'likeme', 'tflers', 'likes', 'likesback',
+        'photooftheday', 'likesforlike', 'iliketurtles',
+        'likes4followers', 'likemeback', 'ilu'
+        'likesreturned', 'l4l']
 
-def likes():
-    num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    location = choice(num)
-    feed = randint(1, 2)
-    intra = randint(1, 6)
-    tag = randint(1, 6)
-    session.set_do_like(enabled=True, percentage=70)
-    session.like_by_feed(amount=feed, randomize=True, unfollow=False, interact=False)
-    sleep(120)
-    session.set_user_interact(amount=intra, randomize=True, percentage=100, media='Photo')
-    session.like_by_tags(['habesha', 'et', 'oro', 'nazu', 'addis', 'adama'], amount=tag, interact=True)
-    sleep(120)
-
-def comment():
-    session.set_do_comment(enabled=True, percentage=75)
-    session.set_comments([])
-    session.comment_by_locations([''], amount=5)
-
-def follow():
-    session.set_do_follow(enabled=True, percentage=25, times=2)
-    session.follow_commenters(['noah_n18_', 'nahom_legesse', 'robsan_hmt'], amount=3, daysold=365, max_pic=6, sleep_delay=600, interact=False)
-    session.follow_likers(['noah_n18_', 'nahom_legesse'], photos_grab_amount=2, follow_likers_per_photo=2, randomize=True, sleep_delay=600, interact=False)
-    session.follow_user_followers(['nahom_legesse', 'noah_n18_', 'robsan_hmt'], amount=10, randomize=True, sleep_delay=60)
-
+location = [
+    '1803190983301422/haile-hotels-and-resorts/',
+    '292006909/nazareth-shewa-ethiopia/',
+    '598461275/adama-shewa-ethiopia/',
+    '220596416/addis-ababa-ethiopia/'
+]
+users = [
+    'eyu.g_', 'farees4real', 'f_a_r_i_s_a_b', 'Farracer_999',
+    'robsan_hmt', 'nahom_legesse', 'official_naolx', 'kei__g_',
+    'ethio_pure_habesha', 'official_leul', 'makbooll_a',
+    'beckham7bkm', 'eyor_cawe', 'official_blackye', 
+    'guyyeman', 'kena_zgreat', 'giruma__', 'kaleab__endashw'
+]
 with smart_run(session):
-    follow()
+    # General setting
+    session.set_blacklist(enabled=True, campaign='yada2k21')
+    session.set_do_like(enabled=True, percentage=70)
+    session.set_do_follow(enabled=True, percentage=25)
+    session.set_do_comment(enabled=True, percentage=25)
+    session.set_relationship_bounds(enabled=True,
+                                    potency_ratio=None,
+                                    delimit_by_numbers=True,
+                                    max_followers=1000,
+                                    max_following=1000,
+                                    min_followers=400,
+                                    min_following=500,
+                                    min_posts=0,
+                                    max_posts=1000)
+    # Liking
+    # Like posts based on hashtags
+    #session.like_by_tags(tags, amount=50)
+    #session.like_by_locations(location, amount=50, randomize=True)
+
+    # Comment
+
+    # session.set_comments(comments)
+
+    # Follow
+
+    # session.follow_by_locations(location, amount=100)
+    session.follow_user_followers(
+        users, amount=200, randomize=True, interact=True, sleep_delay=27)
+    # Unfollow
+    # session.unfollow_users(
+    #    amount = 50, nonFollowers = True, style = "RANDOM", unfollow_after = 42*60*60, sleep_delay = 23
+    # )
